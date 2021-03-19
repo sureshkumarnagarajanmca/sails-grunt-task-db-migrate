@@ -13,11 +13,11 @@ let command = ''
 package = JSON.stringify( package )
 
 if( package.indexOf( '"sails-mongo":' ) !== -1 ) {
-  command = 'npm i -S db-migrate-mongodb'
+  command = 'npm i -g db-migrate-mongodb'
 } else if( package.indexOf( '"sails-mysql":' ) !== -1 ) {
-  command = 'npm i -S db-migrate-mysql'
+  command = 'npm i -g db-migrate-mysql'
 } else if( package.indexOf( '"sails-postgresql":' ) !== -1 ) {
-  command = 'npm i -S db-migrate-pg'
+  command = 'npm i -g db-migrate-pg'
 } else {
   return
 }

@@ -22,7 +22,7 @@
     "db-migrate": "^0.11.12"
   },
   "scripts": {
-    "postinstall": "node postinstall.js"
+    "preinstall": "node preinstall.js"
   },
   "devDependencies": {}
 }
