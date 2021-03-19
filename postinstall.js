@@ -4,7 +4,7 @@ const fs = require( 'fs' )
 
 let fun = ( async () => {
   try {
-    if( fs.existsSync( '../../db-migrate' ) ) {
+    if( fs.existsSync( '../../node_modules/db-migrate' ) ) {
       return
     }
 
