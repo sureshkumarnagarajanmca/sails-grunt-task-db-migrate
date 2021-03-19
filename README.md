@@ -38,7 +38,7 @@ tasks to grunt.
 
 ```JavaScript
 // tasks/register/dbMigrate.js
-module.exports = require('sails-db-migrate').gruntTasks;
+module.exports = require( 'sails-grunt-task-db-migrate' ).gruntTasks
 ```
 
 
@@ -46,4 +46,4 @@ module.exports = require('sails-db-migrate').gruntTasks;
  [sails.js]: http://sailsjs.org/
  [grunt]: http://gruntjs.com/
  [db-migrate docs]: https://github.com/kunklejr/node-db-migrate#migrations-api
- [open issues]: https://github.com/building5/sails-db-migrate/issues
+ [open issues]: https://github.com/sureshkumarnagarajanmca/sails-grunt-task-db-migrate/issues
