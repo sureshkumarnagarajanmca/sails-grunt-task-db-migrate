@@ -1,13 +1,13 @@
 const {exec} = require('child_process');
-var path = require('path')
-var appDir = path.dirname(require.main.filename)
-console.log( appDir )
+//var path = require('path')
+//var appDir = path.dirname(require.main.filename)
+
 /*if (process.platform !== 'win32') {
   // run scripts for Windows
   return;
 }*/
 
-let package = require( path.join( appDir, 'package.json' ))
+let package = require( '../../package.json' )
 let command = ''
 
 package = JSON.stringify( package )
