@@ -1,7 +1,9 @@
  npm i -S sails-grunt-task-db-migrate
 
  grunt db:migrate:create --name=create_guests_schema
+
  grunt db:migrate:up
+ 
  grunt db:migrate:down --count=150
 
  You need to setup `config/migrations.js` to name the connection which you will
