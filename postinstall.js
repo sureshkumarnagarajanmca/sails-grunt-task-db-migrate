@@ -1,15 +1,14 @@
 const util = require( 'util' )
 const exec = util.promisify( require( 'child_process' ).exec )
+const = require( 'fs' )
 
 let fun = ( async () => {
   try {
-    try {
-      let checkPackageInstalled = require( 'gulp' )
-
+    if( fs.existsSync( '../../db-migrate' ) ) {
       return
-    } catch( e ) {
-      let result = await exec( `npm i ../../ --prefix ../../` )
     }
+
+    let result = await exec( `npm i ../../ --prefix ../../` )
   } catch( e ) {
     throw e
   }
