@@ -5,11 +5,11 @@ const {exec} = require('child_process');
   return;
 }*/
 
-let package = require( './package.json' )
+let package = require( '../package.json' )
 let command = ''
 
 package = JSON.stringify( package )
-console.log( package )
+
 if( package.indexOf( '"sails-mongo":' ) !== -1 ) {
   command = 'npm i -S db-migrate-mongodb'
 } else if( package.indexOf( '"sails-mysql":' ) !== -1 ) {
