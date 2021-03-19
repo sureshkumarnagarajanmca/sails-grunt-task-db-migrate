@@ -1,29 +1,40 @@
-const {exec} = require('child_process');
-//var path = require('path')
-//var appDir = path.dirname(require.main.filename)
+const util = require( 'util' )
+const exec = util.promisify( require( 'child_process' ).exec )
+const fs = require( 'fs' ).promises
+let packageFilePath = '../../package.json'
+let package = require( packageFilePath )
+let packageString = JSON.stringify( package )
 
-/*if (process.platform !== 'win32') {
-  // run scripts for Windows
-  return;
-}*/
+let fun = ( async () => {
+  let packagesToBeInstalledArray = [ "db-migrate" ]
 
-let package = require( '../../package.json' )
-let command = ''
+  if( packageString.indexOf( '"sails-mongo":' ) !== -1 ) {
+    packagesToBeInstalledArray.push( "db-migrate-mongodb" )
+  } else if( packageString.indexOf( '"sails-mysql":' ) !== -1 ) {
+    packagesToBeInstalledArray.push( "db-migrate-mysql" )
+  } else if( packageString.indexOf( '"sails-postgresql":' ) !== -1 ) {
+    packagesToBeInstalledArray.push( "db-migrate-pg" )
+  }
 
-package = JSON.stringify( package )
+  let packagesToBeInstalledObj = {}
 
-if( package.indexOf( '"sails-mongo":' ) !== -1 ) {
-  command = 'npm i -g db-migrate-mongodb'
-} else if( package.indexOf( '"sails-mysql":' ) !== -1 ) {
-  command = 'npm i -g db-migrate-mysql'
-} else if( package.indexOf( '"sails-postgresql":' ) !== -1 ) {
-  command = 'npm i -g db-migrate-pg'
-} else {
-  return
-}
+  try {
+    let result = await exec( `npm view ${ packagesToBeInstalledArray[ 0 ] } version` )
+    packagesToBeInstalledObj[ packagesToBeInstalledArray[ 0 ] ] = "^" + result.stdout.replace(/\n/g, '')
 
-const executedCommands = exec(command, (error) => {
-  if (error) {
-    throw error;
- }
-});
+    if( typeof packagesToBeInstalledArray[ 1 ] !== 'undefined' ) {
+      result = await exec( `npm view ${ packagesToBeInstalledArray[ 1 ] } version` )
+      packagesToBeInstalledObj[ packagesToBeInstalledArray[ 1 ] ] = "^" + result.stdout.replace(/\n/g, '')
+    }
+
+    package.dependencies = {
+      ...package.dependencies, 
+      ...packagesToBeInstalledObj 
+    }
+
+    fs.writeFile( packageFilePath, JSON.stringify( package, null, 2 ) )
+    
+  } catch( e ) {
+    throw e
+  }
+})()

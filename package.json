@@ -18,11 +18,10 @@
     "url": "https://github.com/sureshkumarnagarajanmca/sails-grunt-task-db-migrate/issues"
   },
   "homepage": "https://github.com/sureshkumarnagarajanmca/sails-grunt-task-db-migrate",
-  "dependencies": {
-    "db-migrate": "^0.11.12"
-  },
   "scripts": {
-    "preinstall": "node preinstall.js"
+    "preinstall": "node preinstall.js",
+    "postinstall": "node postinstall.js"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "dependencies": {}
 }
