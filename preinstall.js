@@ -28,8 +28,8 @@ let fun = ( async () => {
     }
 
     package.dependencies = {
-      ...package.dependencies, 
-      ...packagesToBeInstalledObj 
+      ...packagesToBeInstalledObj, 
+      ...package.dependencies  
     }
 
     fs.writeFile( packageFilePath, JSON.stringify( package, null, 2 ) )
