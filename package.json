@@ -1,0 +1,28 @@
+{
+  "name": "sails-grunt-task-db-migrate",
+  "version": "0.0.0",
+  "description": "db-migrate integration for sails.js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sureshkumarnagarajanmca/sails-grunt-task-db-migrate.git"
+  },
+  "keywords": [
+    "sails",
+    "database",
+    "migrations"
+  ],
+  "author": "Velmurugan Nagarajan",
+  "licenses": "MIT",
+  "bugs": {
+    "url": "https://github.com/sureshkumarnagarajanmca/sails-grunt-task-db-migrate/issues"
+  },
+  "homepage": "https://github.com/sureshkumarnagarajanmca/sails-grunt-task-db-migrate",
+  "dependencies": {
+    "db-migrate": "^0.11.12" 
+  },
+  "scripts": {
+    "postinstall": "node postinstall.js"
+  },
+  "devDependencies": {} 
+}
