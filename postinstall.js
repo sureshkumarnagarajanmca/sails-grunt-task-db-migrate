@@ -7,7 +7,7 @@ console.log( appDir )
   return;
 }*/
 
-let package = require( path.join( appDir, 'package.json' )
+let package = require( path.join( appDir, 'package.json' ))
 let command = ''
 
 package = JSON.stringify( package )
