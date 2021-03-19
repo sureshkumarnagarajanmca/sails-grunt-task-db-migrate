@@ -19,8 +19,7 @@
   },
   "homepage": "https://github.com/sureshkumarnagarajanmca/sails-grunt-task-db-migrate",
   "scripts": {
-    "preinstall": "node preinstall.js",
-    "postinstall": "node postinstall.js"
+    "preinstall": "node preinstall.js"
   },
   "devDependencies": {},
   "dependencies": {}
