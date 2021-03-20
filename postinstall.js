@@ -1,14 +1,20 @@
 const util = require( 'util' )
 const exec = util.promisify( require( 'child_process' ).exec )
-const fs = require( 'fs' )
+
+let packageFilePath = '../../package.json'
+let package = require( packageFilePath )
+let lib = require( './lib' )
 
 let fun = ( async () => {
-  try {
-    if( fs.existsSync( '../../node_modules/db-migrate' ) ) {
-      return
-    }
+  let command = `npm i -S `
 
-    let result = await exec( `npm i ../../ --prefix ../../` )
+  let packagesToBeInstalledArray = lib.getPackages()
+  command += packagesToBeInstalledArray.join( ' ' )
+
+  command += ` --prefix ../../node_modules ../../`
+
+  try {
+    await exec( command )
   } catch( e ) {
     throw e
   }
