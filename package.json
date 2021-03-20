@@ -1,6 +1,6 @@
 {
   "name": "sails-grunt-task-db-migrate",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "db-migrate integration for sails.js",
   "main": "index.js",
   "repository": {
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/sureshkumarnagarajanmca/sails-grunt-task-db-migrate",
   "scripts": {
-    "preinstall": "node preinstall.js", 
+    "preinstall": "node preinstall.js",
     "postinstall": "node postinstall.js"
   },
   "devDependencies": {},
