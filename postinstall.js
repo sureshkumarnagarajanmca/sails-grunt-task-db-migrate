@@ -17,8 +17,8 @@ let fun = ( async () => {
   try {
     await exec( command )
     await removeNodeModules.removeNodeModules( 
-      "./node_modules/node_modules/", 
-      "./node_modules/", 
+      "../../node_modules/node_modules/", 
+      "../../node_modules/", 
       packagesToBeInstalledArray 
     )
   } catch( e ) {
