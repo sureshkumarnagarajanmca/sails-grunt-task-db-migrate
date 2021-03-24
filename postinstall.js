@@ -11,10 +11,9 @@ let fun = ( async () => {
   let packagesToBeInstalledArray = lib.getPackages()
   command += packagesToBeInstalledArray.join( ' ' )
 
-  command += ` --prefix ../../node_modules ../../`
+  command += ` --prefix ../../ ../../`
 
   try {
-    console.log( command )
     await exec( command )
   } catch( e ) {
     throw e
