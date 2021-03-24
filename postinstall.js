@@ -14,6 +14,7 @@ let fun = ( async () => {
   command += ` --prefix ../../node_modules ../../`
 
   try {
+    console.log( command )
     await exec( command )
   } catch( e ) {
     throw e
