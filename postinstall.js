@@ -3,18 +3,24 @@ const exec = util.promisify( require( 'child_process' ).exec )
 
 let packageFilePath = '../../package.json'
 let package = require( packageFilePath )
-let lib = require( './lib' )
+let getPackages = require( './get_packages' )
+let removeNodeModules = require( './remove_node_modules' )
 
 let fun = ( async () => {
   let command = `npm i -S `
 
-  let packagesToBeInstalledArray = lib.getPackages()
+  let packagesToBeInstalledArray = getPackages.getPackages()
   command += packagesToBeInstalledArray.join( ' ' )
 
   command += ` --prefix ../../node_modules ../../`
 
   try {
     await exec( command )
+    await removeNodeModules.removeNodeModules( 
+      "./node_modules/node_modules/", 
+      "./node_modules/", 
+      packagesToBeInstalledArray 
+    )
   } catch( e ) {
     throw e
   }

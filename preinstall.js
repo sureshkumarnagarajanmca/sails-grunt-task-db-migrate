@@ -4,10 +4,10 @@ const fs = require( 'fs' ).promises
 let packageFilePath = '../../package.json'
 let package = require( packageFilePath )
 let packageString = JSON.stringify( package )
-let lib = require( './lib' )
+let getPackages = require( './get_packages' )
 
 let fun = ( async () => {
-  let packagesToBeInstalledArray = lib.getPackages()
+  let packagesToBeInstalledArray = getPackages.getPackages()
 
   let packagesToBeInstalledObj = {}
 
