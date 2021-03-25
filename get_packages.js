@@ -8,7 +8,7 @@ let packagesToBeInstalledArray = [ "db-migrate" ]
 let getPackages = () => {
   let sailsConfig = sails.config
   let connection
-
+console.log( sailsConfig )
   if (!sailsConfig.migrations) {
     throw new Error('Migrations not configured. Please setup ./config/migrations.js')
   }
