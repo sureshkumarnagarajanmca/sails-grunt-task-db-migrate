@@ -1,8 +1,6 @@
 const util = require( 'util' )
 const exec = util.promisify( require( 'child_process' ).exec )
 
-let packageFilePath = '../../package.json'
-let package = require( packageFilePath )
 let getPackages = require( './get_packages' )
 let removeNodeModules = require( './remove_node_modules' )
 
