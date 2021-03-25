@@ -1,6 +1,7 @@
 let packageFilePath = '../../package.json'
 let package = require( packageFilePath )
 let packageString = JSON.stringify( package )
+let sails = require( 'sails' )
 
 let packagesToBeInstalledArray = [ "db-migrate" ]
 
