@@ -7,7 +7,7 @@ let removeNodeModules = require( './remove_node_modules' )
 let fun = ( async () => {
   let command = `npm i -S `
 
-  let packagesToBeInstalledArray = getPackages.getPackages()
+  let packagesToBeInstalledArray = await getPackages.getPackages()
   command += packagesToBeInstalledArray.join( ' ' )
 
   command += ` --prefix ../../node_modules ../../`

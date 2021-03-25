@@ -7,7 +7,7 @@ let packageString = JSON.stringify( package )
 let getPackages = require( './get_packages' )
 
 let fun = ( async () => {
-  let packagesToBeInstalledArray = getPackages.getPackages()
+  let packagesToBeInstalledArray = await getPackages.getPackages()
 
   let packagesToBeInstalledObj = {}
 
