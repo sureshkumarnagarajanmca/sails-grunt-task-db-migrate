@@ -43,8 +43,12 @@ module.exports = require( 'sails-grunt-task-db-migrate' ).sailsGruntTasks
 
  npm i -S sails-grunt-task-db-migrate
 
- grunt db:migrate:create --name=create_guests_schema
+ grunt db:migrate:create --name=create_test_schema
 
  grunt db:migrate:up
  
  grunt db:migrate:down --count=150
+
+ grunt db:migrate:db:create --db-name=test_db
+
+ grunt db:migrate:db:drop --db-name=test_db
