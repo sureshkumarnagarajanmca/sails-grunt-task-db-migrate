@@ -1,7 +1,7 @@
 {
   "name": "sails-grunt-task-db-migrate",
   "version": "0.0.35",
-  "description": "db-migrate integration for sails.js",
+  "description": "db-migrate integration for sails.js including db:create, db:drop and db:seed",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -10,7 +10,21 @@
   "keywords": [
     "sails",
     "database",
-    "migrations"
+    "migrations", 
+    "sails-grunt-task-db-migrate", 
+    "sails-grunt-task", 
+    "sails-grunt-task-db", 
+    "sails-grunt-task-migrate", 
+    "sails-db",
+    "sails-grunt", 
+    "sails-grunt-db", 
+    "sails-task", 
+    "sails-migrate", 
+    "sails migration", 
+    "sails migrate", 
+    "db-create", 
+    "db-drop", 
+    "db-seed"
   ],
   "author": "Velmurugan Nagarajan",
   "licenses": "MIT",

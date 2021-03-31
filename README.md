@@ -1,3 +1,24 @@
+# sails-grunt-task-db-migrate
+
+[db-migrate][] integration for [Sails.js][]. This is a fairly simple wrapper,
+which provides [grunt][] tasks for running and creating migrations. It also
+extracts the database configuration from the Sails config, so you don't have to
+duplicate you config in a `database.json` file.
+
+Supports Sails 0.10.x+ till Sails 1.2.4.
+
+You don't need to install the dependencies individually. Before install this npm, please create `config/migrations.js`.
+
+And also, this npm supports db:create, db:drop and db:seed.
+
+## Setup
+
+Installation is very typical.
+
+```bash
+$ npm install --save sails-db-migrate
+
+
 You need to setup `config/migrations.js` to name the connection which you will
 use to run migrations.
 
