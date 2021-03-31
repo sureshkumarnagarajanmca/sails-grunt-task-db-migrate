@@ -7,7 +7,7 @@ duplicate you config in a `database.json` file.
 
 Supports Sails 0.10.x+ till Sails 1.2.4.
 
-You don't need to install the dependencies individually. Before install this npm, please create `config/migrations.js`.
+You don't need to install the dependencies manually. Instead, the dependencies ( like db-migrate, db-migrate-mongodb, etc... ) will be installed automatically. Before install this npm, please create `config/migrations.js`.
 
 And also, this npm supports db:create, db:drop and db:seed.
 
@@ -16,7 +16,7 @@ And also, this npm supports db:create, db:drop and db:seed.
 Installation is very typical.
 
 ```bash
-$ npm install --save sails-db-migrate
+$ npm install --save sails-grunt-task-db-migrate
 
 
 You need to setup `config/migrations.js` to name the connection which you will
@@ -35,13 +35,16 @@ be used to track migrations (defaults to `migrations`), the directory to use for
 migrations (defaults to `migrations`), and whether to create a coffeescript
 file for the migrations instead of javascript file (defaults to `false`).
 
+And also, we can set `seedingDir` option. If it is not yet set, the default path will be `seeders` folder under root folder.
+
 ```JavaScript
 // config/migrations.js
 module.exports.migrations = {
   // connection name matches a field from config/connections.js
   connection: 'somePostgresqlServer', // or MySQL
   table: 'sails_migrations',
-  migrationsDir: 'sails_migrations',
+  migrationsDir: 'db/migrate',
+  seedingDir: 'db/seeders', 
   coffeeFile: true
 };
 ```
