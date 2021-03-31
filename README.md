@@ -76,3 +76,12 @@ module.exports = require( 'sails-grunt-task-db-migrate' ).sailsGruntTasks
  grunt db:migrate:db:create --db-name=test_db
 
  grunt db:migrate:db:drop --db-name=test_db
+
+### Sample seeder file
+
+```JavaScript
+// seeders/TestTableSeeder.js or db/seeders/TestTableSeeder ( where TestTable is a model of a db table test_table )
+module.exports = aysnc() {
+  TestTable.create( { field1: 'value', field: 'value' } )
+}
+```
