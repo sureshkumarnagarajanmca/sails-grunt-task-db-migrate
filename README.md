@@ -1,12 +1,4 @@
- npm i -S sails-grunt-task-db-migrate
-
- grunt db:migrate:create --name=create_guests_schema
-
- grunt db:migrate:up
- 
- grunt db:migrate:down --count=150
-
- You need to setup `config/migrations.js` to name the connection which you will
+You need to setup `config/migrations.js` to name the connection which you will
 use to run migrations.
 
 ```JavaScript
@@ -38,7 +30,7 @@ tasks to grunt.
 
 ```JavaScript
 // tasks/register/dbMigrate.js
-module.exports = require( 'sails-grunt-task-db-migrate' ).gruntTasks
+module.exports = require( 'sails-grunt-task-db-migrate' ).sailsGruntTasks
 ```
 
 
@@ -47,3 +39,12 @@ module.exports = require( 'sails-grunt-task-db-migrate' ).gruntTasks
  [grunt]: http://gruntjs.com/
  [db-migrate docs]: https://github.com/kunklejr/node-db-migrate#migrations-api
  [open issues]: https://github.com/sureshkumarnagarajanmca/sails-grunt-task-db-migrate/issues
+
+
+ npm i -S sails-grunt-task-db-migrate
+
+ grunt db:migrate:create --name=create_guests_schema
+
+ grunt db:migrate:up
+ 
+ grunt db:migrate:down --count=150
