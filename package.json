@@ -1,6 +1,6 @@
 {
   "name": "sails-grunt-task-db-migrate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "db-migrate integration for sails.js including db:create, db:drop and db:seed",
   "main": "index.js",
   "repository": {
