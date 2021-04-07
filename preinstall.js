@@ -12,11 +12,12 @@ let fun = ( async () => {
   let packagesToBeInstalledObj = {}
 
   try {
-    let result = await exec( `npm view ${ packagesToBeInstalledArray[ 0 ] } version` )
+    let commandPrefix = /^win/.test( process.platform ) ? `sudo ` ? ``
+    let result = await exec( `${commandPrefix}npm view ${ packagesToBeInstalledArray[ 0 ] } version` )
     packagesToBeInstalledObj[ packagesToBeInstalledArray[ 0 ] ] = "^" + result.stdout.replace(/\n/g, '')
 
     if( typeof packagesToBeInstalledArray[ 1 ] !== 'undefined' ) {
-      result = await exec( `npm view ${ packagesToBeInstalledArray[ 1 ] } version` )
+      result = await exec( `${commandPrefix}npm view ${ packagesToBeInstalledArray[ 1 ] } version` )
       packagesToBeInstalledObj[ packagesToBeInstalledArray[ 1 ] ] = "^" + result.stdout.replace(/\n/g, '')
     }
 

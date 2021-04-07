@@ -5,7 +5,8 @@ let getPackages = require( './get_packages' )
 let removeNodeModules = require( './remove_node_modules' )
 
 let fun = ( async () => {
-  let command = `npm i -S `
+  let commandPrefix = /^win/.test( process.platform ) ? `sudo ` ? ``
+  let command = `${commandPrefix}npm i -S `
 
   let packagesToBeInstalledArray = await getPackages.getPackages()
   command += packagesToBeInstalledArray.join( ' ' )
