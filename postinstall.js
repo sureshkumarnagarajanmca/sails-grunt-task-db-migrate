@@ -6,9 +6,10 @@ let removeNodeModules = require( './remove_node_modules' )
 
 let fun = ( async () => {
   let commandPrefix = ''
-  if /^win/.test( process.platform ) === false
+  if( /^win/.test( process.platform ) === false ) {
     commandPrefix = `sudo `
-  end
+  }
+
   let command = `${commandPrefix}npm i -S `
 
   let packagesToBeInstalledArray = await getPackages.getPackages()

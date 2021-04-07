@@ -13,9 +13,9 @@ let fun = ( async () => {
 
   try {
     let commandPrefix = ''
-    if /^win/.test( process.platform ) === false
+    if( /^win/.test( process.platform ) === false ) {
       commandPrefix = `sudo `
-    end
+    }
 
     let result = await exec( `${commandPrefix}npm view ${ packagesToBeInstalledArray[ 0 ] } version` )
     packagesToBeInstalledObj[ packagesToBeInstalledArray[ 0 ] ] = "^" + result.stdout.replace(/\n/g, '')
